@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
 import logo_defaut from '../assets/default_dog.jpg'
+import { Link } from "react-router-dom";
 
 export default class Pets extends Component {
   constructor(props) {
@@ -54,15 +55,17 @@ export default class Pets extends Component {
                   <Card.Title>{t.attributes.name}</Card.Title>
                   <Card.Text>{t.attributes.extra_information.substring(0, 50)}...</Card.Text>
                   {t.attributes.status == 'lost' && 
-                    <h4><Badge pill bg="danger">Perdido</Badge></h4>
+                    <h5><Badge pill bg="danger">Perdido</Badge></h5>
                   }
                   {t.attributes.status == 'communicated' && 
-                    <h4><Badge pill bg="warning">Comunicado</Badge></h4>
+                    <h5><Badge pill bg="warning">Comunicado</Badge></h5>
                   }
                   {t.attributes.status == 'found' && 
-                    <h4><Badge pill bg="primary">Encontrado</Badge></h4>
+                    <h5><Badge pill bg="primary">Encontrado</Badge></h5>
                   }
-                  
+                  <Link>
+                  Mostrar comunicadores
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>

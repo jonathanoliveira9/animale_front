@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
-import { Card, CardGroup, Row, Col, Container } from "react-bootstrap";
+import { Card, CardGroup, Row, Col, Container, ButtonToolbar } from "react-bootstrap";
 import logo_defaut from '../assets/default_dog.jpg'
 import UserService from "../services/user.service";
+import {ModalDashCommunicators} from './modal-dash-communicators';
 
 export default class Home extends Component {
   constructor(props) {
@@ -46,7 +47,14 @@ export default class Home extends Component {
                 <Card.Body>
                   <Card.Title>{t.attributes.name}</Card.Title>
                   <Card.Text>{t.attributes.extra_information.substring(0, 50)}...</Card.Text>
-                  <Button variant="danger">Notifique aqui</Button>
+                  
+                  <ButtonToolbar>
+                  <Button variant="danger"
+                    onClick={()=> this.setState({addModalShow: true})}
+                  >Notifique aqui</Button>
+                  <ModalDashCommunicators show={this.state.addModalShow} onHide={this.state.addModalClose} id_animal={t.attributes.id}/>
+                  </ButtonToolbar>
+
               </Card.Body>
             </Card>
           </Col>

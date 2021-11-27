@@ -15,6 +15,16 @@ class UserService {
       headers: authHeader()
     } )
   }
+
+  postCommunicators(name, phone, occurrence, animal_id) {
+    return axios.post(process.env.REACT_APP_API_URL + 'api/v1/communicators', 
+    { "name": name,
+       "phone": phone,
+       "occurrence": occurrence,
+       "animal_id": animal_id
+    }
+    )
+  }
 }
 
 export default new UserService();
