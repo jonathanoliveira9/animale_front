@@ -3,11 +3,11 @@ import authHeader from "./auth-header";
 
 class UserService {
   getPublicContent() {
-    return axios.get(API_URL + "/api/v1/animals");
+    return axios.get(process.env.REACT_APP_API_URL + "/api/v1/animals");
   }
 
   getUserBoard() {
-    return axios.get(API_URL + "user", { headers: authHeader() });
+    return axios.get(process.env.REACT_APP_API_URL + "user", { headers: authHeader() });
   }
 }
 

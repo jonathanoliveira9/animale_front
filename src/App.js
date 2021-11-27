@@ -17,6 +17,7 @@ import { clearMessage } from "./actions/message";
 import { history } from './helpers/history';
 
 import EventBus from "./common/EventBus";
+require('dotenv').config()
 
 class App extends Component {
   constructor(props) {
