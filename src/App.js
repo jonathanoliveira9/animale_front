@@ -8,6 +8,7 @@ import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
+import Pets from "./components/pets.component";
 import BoardUser from "./components/board-user.component";
 import Button from 'react-bootstrap/Button';
 import { Card } from "react-bootstrap";
@@ -68,7 +69,9 @@ class App extends Component {
             <Link to={"/"} className="navbar-brand">
               Animale Pet
             </Link>
-
+            <Link to={"/pets"} className="navbar-brand">
+              Meus Pets
+            </Link>
             {currentUser ? (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
@@ -106,10 +109,9 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/profile" component={Profile} />
               <Route path="/user" component={BoardUser} />
+              <Route exact path="/pets" component={Pets}></Route>
             </Switch>
           </div>
-
-          {/* <AuthVerify logOut={this.logOut}/> */}
         </div>
       </Router>
     );

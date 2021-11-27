@@ -6,8 +6,8 @@ class AuthService {
       .post(process.env.REACT_APP_API_URL + "users/sign_in", {user: { email, password } })
       .then((response) => {
         if (response.headers.authorization) {
-          
           localStorage.setItem("user", JSON.stringify(response.data.user));
+          localStorage.setItem("authorization", JSON.stringify(response.headers.authorization))
         }
         return response.data;
       });
