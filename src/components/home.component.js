@@ -36,8 +36,7 @@ export default class Home extends Component {
   render() {
     return (
       <Container fluid>
-
-     
+        <h3 className="pt-5 text-center">Nós ajude a encontrar o pet desaparecido</h3>
         <Row className="g-4">
         {
           this.state.content.map(t => (
