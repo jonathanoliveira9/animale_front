@@ -4,13 +4,13 @@ import { Router, Switch, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
-
+import Button from 'react-bootstrap/Button';
+import { Card } from "react-bootstrap";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
@@ -68,6 +68,7 @@ class App extends Component {
             <Link to={"/"} className="navbar-brand">
               Animale Pet
             </Link>
+
             {currentUser ? (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">

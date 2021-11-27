@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import Button from 'react-bootstrap/Button';
+import { Card, CardGroup, Row, Col, Container } from "react-bootstrap";
+import logo_defaut from '../assets/default_dog.jpg'
 import UserService from "../services/user.service";
 
 export default class Home extends Component {
@@ -33,13 +35,26 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="container">
+      <Container fluid>
+
+     
+        <Row className="g-4">
         {
           this.state.content.map(t => (
-            <h1>{t.attributes.name}</h1>
+            <Col>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={logo_defaut} />
+                <Card.Body>
+                  <Card.Title>{t.attributes.name}</Card.Title>
+                  <Card.Text>{t.attributes.extra_information.substring(0, 50)}...</Card.Text>
+                  <Button variant="danger">Notifique aqui</Button>
+              </Card.Body>
+            </Card>
+          </Col>
           ))
         }
-      </div>
+        </Row>
+        </Container>
     );
   }
 }
