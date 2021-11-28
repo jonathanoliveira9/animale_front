@@ -67,7 +67,7 @@ const vcity = (value) => {
   }
 }
 
-const vcountry = (value) => {
+const vdistrict = (value) => {
   if (value.length < 2) {
     return (
       <div className="alert alert-danger" role="alert">
@@ -84,7 +84,7 @@ class Register extends Component {
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onChangeCity = this.onChangeCity.bind(this);
-    this.onChangeCountry = this.onChangeCountry.bind(this);
+    this.onChangeDistrict = this.onChangeDistrict.bind(this);
     this.onChangePhone = this.onChangePhone.bind(this);
     this.onChangePasswordConfirmation = this.onChangePasswordConfirmation.bind(this);
 
@@ -93,7 +93,7 @@ class Register extends Component {
       email: "",
       phone: "",
       city: "",
-      country: "",
+      district: "",
       password: "",
       password_confirmation: "",
       successful: false,
@@ -130,9 +130,9 @@ class Register extends Component {
     });
   }
 
-  onChangeCountry(e) {
+  onChangeDistrict(e) {
     this.setState({
-      country: e.target.value,
+      district: e.target.value,
     });
   }
   
@@ -154,7 +154,7 @@ class Register extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       this.props
         .dispatch(
-          register(this.state.name, this.state.email, this.state.phone, this.state.city, this.state.country, this.state.password, this.state.password_confirmation)
+          register(this.state.name, this.state.email, this.state.phone, this.state.city, this.state.district, this.state.password, this.state.password_confirmation)
         )
         .then(() => {
           this.setState({
@@ -190,7 +190,7 @@ class Register extends Component {
             {!this.state.successful && (
               <div>
                 <div className="form-group">
-                  <label htmlFor="username">Username</label>
+                  <label htmlFor="username">Nome</label>
                   <Input
                     type="text"
                     className="form-control"
@@ -214,7 +214,7 @@ class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Phone</label>
+                  <label htmlFor="password">Telefone</label>
                   <InputMask
                     type="text"
                     className="form-control"
@@ -226,7 +226,7 @@ class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">City</label>
+                  <label htmlFor="password">Cidade</label>
                   <Input
                     type="text"
                     className="form-control"
@@ -238,19 +238,19 @@ class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Country</label>
+                  <label htmlFor="password">Estado</label>
                   <Input
                     type="text"
                     className="form-control"
-                    name="country"
-                    value={this.state.country}
-                    onChange={this.onChangeCountry}
-                    validations={[required, vcountry]}
+                    name="district"
+                    value={this.state.district}
+                    onChange={this.onChangeDistrict}
+                    validations={[required, vdistrict]}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password">Senha</label>
                   <Input
                     type="password"
                     className="form-control"
@@ -262,7 +262,7 @@ class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Password Confirmation</label>
+                  <label htmlFor="password">Confirma a Senha</label>
                   <Input
                     type="password"
                     className="form-control"

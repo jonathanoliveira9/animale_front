@@ -65,12 +65,13 @@ class FormAnimal extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
+        <h4 class="text-center mb-4">Cadastrar Pet</h4>
       <Form.Group as={Row} className="mb-3" controlId="formName">
         <Form.Label column sm="2">
           Nome
         </Form.Label>
         <Col sm="10">
-          <Form.Control type="text" placeholder="Password"
+          <Form.Control type="text"
           value={this.state.name}
           onChange={this.onChangeName}
           required/>
@@ -81,7 +82,7 @@ class FormAnimal extends Component {
           Idade
         </Form.Label>
         <Col sm="10">
-          <Form.Control type="text" placeholder="Idade"
+          <Form.Control type="text"
            value={this.state.age}
            onChange={this.onChangeAge} />
         </Col>
@@ -100,7 +101,10 @@ class FormAnimal extends Component {
         <Button variant="primary" type="submit">
           Salvar
         </Button>
+        <Button className="ml-1" href="/pets">Voltar</Button>
+
       </Form.Group>
+      
     </Form>
     );
   }

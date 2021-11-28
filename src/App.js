@@ -83,7 +83,7 @@ class App extends Component {
                 </li>
                 <li className="nav-item">
                   <a href="/login" className="nav-link" onClick={this.logOut}>
-                    Log out
+                    Sair
                   </a>
                 </li>
               </div>
@@ -91,13 +91,13 @@ class App extends Component {
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <Link to={"/login"} className="nav-link">
-                    Login
+                    Entrar
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link to={"/register"} className="nav-link">
-                    Sign Up
+                    Cadastrar
                   </Link>
                 </li>
               </div>
