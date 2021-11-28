@@ -3,7 +3,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-
+import InputMask from 'react-input-mask';
 import { connect } from "react-redux";
 import { register } from "../actions/auth";
 
@@ -215,14 +215,14 @@ class Register extends Component {
 
                 <div className="form-group">
                   <label htmlFor="password">Phone</label>
-                  <Input
+                  <InputMask
                     type="text"
                     className="form-control"
-                    name="phone"
+                    mask="(99) 99999-9999"
                     value={this.state.phone}
                     onChange={this.onChangePhone}
                     validations={[required, vphone]}
-                  />
+                    placeholder="(99) 99999-9999"/>
                 </div>
 
                 <div className="form-group">

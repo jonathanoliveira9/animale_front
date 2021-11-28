@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Modal, Button, Row, Col, Form, Container } from 'react-bootstrap';
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
+import InputMask from 'react-input-mask';
 export class ModalDashCommunicators extends Component{
   constructor(props){
     super(props);
@@ -83,14 +84,16 @@ export class ModalDashCommunicators extends Component{
                       placeholder="Seu Nome">
                     </Form.Control>
                     <Form.Label>Telefone</Form.Label>
-                    <Form.Control
+                    <InputMask
                       type="text"
                       name="phone"
+                      className="form-control"
+                      mask="(99) 99999-9999"
                       value={this.state.phone}
                       onChange={this.onChangePhone}
                       required
-                      placeholder="telefone">
-                    </Form.Control>
+                      placeholder="(99) 99999-9999">
+                    </InputMask>
 
                     <Form.Label>Observação</Form.Label>
                     <Form.Control
