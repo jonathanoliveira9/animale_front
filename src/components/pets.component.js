@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Badge, Row, Col, Container } from "react-bootstrap";
+import { Card, Badge, Button, Row, Col, Container } from "react-bootstrap";
 
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
@@ -44,7 +44,14 @@ export default class Pets extends Component {
     return (
       <Container fluid>
         <h3 className="pt-5 text-center">Pets Cadastrados</h3>
+        <Link to={"/create_animal"}>
+            <Button>
+            Cadastrar Pet
+            </Button>
+              
+            </Link>
         <Row className="g-4">
+          
           {
           this.state.content.map(t => (
             <Col>

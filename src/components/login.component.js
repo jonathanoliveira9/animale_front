@@ -58,7 +58,7 @@ class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       dispatch(login(this.state.email, this.state.password))
         .then(() => {
-          history.push("/profile");
+          history.push("/pets");
           window.location.reload();
         })
         .catch(() => {

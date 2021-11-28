@@ -12,7 +12,7 @@ import Pets from "./components/pets.component";
 import BoardUser from "./components/board-user.component";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
-
+import FormAnimal from "./components/form-animal.component";
 import { history } from './helpers/history';
 
 import EventBus from "./common/EventBus";
@@ -108,6 +108,7 @@ class App extends Component {
               <Route exact path="/profile" component={Profile} />
               <Route path="/user" component={BoardUser} />
               <Route exact path="/pets" component={Pets}></Route>
+              <Route exact path="/create_animal" component={FormAnimal}></Route>
             </Switch>
           </div>
         </div>

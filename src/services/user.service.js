@@ -25,6 +25,15 @@ class UserService {
     }
     )
   }
+
+  postAnimal(name, age, extra_information) {
+    return axios.post(process.env.REACT_APP_API_URL + 'api/v1/animals',
+    {
+      "name": name,
+      "age": age,
+      "extra_information": extra_information
+    }, { headers: authHeader() })
+  }
 }
 
 export default new UserService();
