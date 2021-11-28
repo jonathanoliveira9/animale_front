@@ -10,8 +10,6 @@ import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import Pets from "./components/pets.component";
 import BoardUser from "./components/board-user.component";
-import Button from 'react-bootstrap/Button';
-import { Card } from "react-bootstrap";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 

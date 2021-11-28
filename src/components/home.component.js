@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
-import { Card, CardGroup, Row, Col, Container, ButtonToolbar } from "react-bootstrap";
+import { Card, Row, Col, Container, ButtonToolbar } from "react-bootstrap";
 import logo_defaut from '../assets/default_dog.jpg'
 import UserService from "../services/user.service";
 import {ModalDashCommunicators} from './modal-dash-communicators';
@@ -11,7 +11,8 @@ export default class Home extends Component {
 
     this.state = {
       content: [],
-      pagination: []
+      pagination: [],
+      addModalShow: false
     };
   }
 
@@ -35,6 +36,7 @@ export default class Home extends Component {
   }
 
   render() {
+    let addModalClose = () => this.setState({ addModalShow: false})
     return (
       <Container fluid>
         <h3 className="pt-5 text-center">Nós ajude a encontrar o pet desaparecido</h3>
@@ -65,3 +67,4 @@ export default class Home extends Component {
     );
   }
 }
+

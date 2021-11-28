@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, Badge, Row, Col, Container } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
 
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
@@ -54,13 +53,13 @@ export default class Pets extends Component {
                 <Card.Body>
                   <Card.Title>{t.attributes.name}</Card.Title>
                   <Card.Text>{t.attributes.extra_information.substring(0, 50)}...</Card.Text>
-                  {t.attributes.status == 'lost' && 
+                  {t.attributes.status === 'lost' && 
                     <h5><Badge pill bg="danger">Perdido</Badge></h5>
                   }
-                  {t.attributes.status == 'communicated' && 
+                  {t.attributes.status === 'communicated' && 
                     <h5><Badge pill bg="warning">Comunicado</Badge></h5>
                   }
-                  {t.attributes.status == 'found' && 
+                  {t.attributes.status === 'found' && 
                     <h5><Badge pill bg="primary">Encontrado</Badge></h5>
                   }
                   <Link>
