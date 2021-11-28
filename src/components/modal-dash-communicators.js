@@ -37,12 +37,15 @@ export class ModalDashCommunicators extends Component{
   }
 
   handleSubmit(event){
+
     event.preventDefault();
+
     UserService.postCommunicators(this.state.name, this.state.phone, this.state.occurrence, this.props.id_animal).then(
       response => {
         this.setState({
           content: response.data.data
         });
+        window.location.reload();
       },
       error => {
         this.setState({

@@ -17,12 +17,14 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
+
     UserService.getPublicContent().then(
       response => {
         this.setState({
           content: response.data.data,
           pagination: response.data.links
         });
+
       },
       error => {
         this.setState({
@@ -36,7 +38,7 @@ export default class Home extends Component {
   }
 
   render() {
-    let addModalClose = () => this.setState({ addModalShow: false})
+    let addModalClose =() => this.setState({ addModalShow: false })
     return (
       <Container fluid>
         <h3 className="pt-5 text-center">Nós ajude a encontrar o pet desaparecido</h3>
@@ -54,7 +56,7 @@ export default class Home extends Component {
                   <Button variant="danger"
                     onClick={()=> this.setState({addModalShow: true})}
                   >Notifique aqui</Button>
-                  <ModalDashCommunicators show={this.state.addModalShow} onHide={this.state.addModalClose} id_animal={t.attributes.id}/>
+                  <ModalDashCommunicators show={this.state.addModalShow} onHide={addModalClose} id_animal={t.attributes.id}/>
                   </ButtonToolbar>
 
               </Card.Body>
