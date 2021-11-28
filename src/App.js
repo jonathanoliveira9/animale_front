@@ -13,6 +13,7 @@ import BoardUser from "./components/board-user.component";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 import FormAnimal from "./components/form-animal.component";
+import Communicators from "./components/communicators.component";
 import { history } from './helpers/history';
 
 import EventBus from "./common/EventBus";
@@ -67,9 +68,12 @@ class App extends Component {
             <Link to={"/"} className="navbar-brand">
               Animale Pet
             </Link>
+            { currentUser && 
             <Link to={"/pets"} className="navbar-brand">
               Meus Pets
-            </Link>
+              </Link>
+            }
+
             {currentUser ? (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
@@ -109,6 +113,7 @@ class App extends Component {
               <Route path="/user" component={BoardUser} />
               <Route exact path="/pets" component={Pets}></Route>
               <Route exact path="/create_animal" component={FormAnimal}></Route>
+              <Route exact path="/communicators" component={Communicators}></Route>
             </Switch>
           </div>
         </div>

@@ -11,7 +11,8 @@ export default class Pets extends Component {
     super(props);
 
     this.state = {
-      content: []
+      content: [],
+      animal_id: ''
     };
 
   }
@@ -69,7 +70,7 @@ export default class Pets extends Component {
                   {t.attributes.status === 'found' && 
                     <h5><Badge pill bg="primary">Encontrado</Badge></h5>
                   }
-                  <Link>
+                  <Link to={{ pathname: "/communicators", state: { animal_id: t.attributes.id }}}>
                   Mostrar comunicadores
                   </Link>
                 </Card.Body>

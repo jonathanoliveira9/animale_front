@@ -16,6 +16,16 @@ class UserService {
     } )
   }
 
+  getCommunicators(animal_id) {
+    return axios.get(process.env.REACT_APP_API_URL + 'api/v1/communicators',
+    {
+      headers: authHeader(),
+      params: { 
+        "animal_id": animal_id
+      }
+    })
+  }
+
   postCommunicators(name, phone, occurrence, animal_id) {
     return axios.post(process.env.REACT_APP_API_URL + 'api/v1/communicators', 
     { "name": name,
