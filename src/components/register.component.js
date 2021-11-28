@@ -11,7 +11,7 @@ const required = (value) => {
   if (!value) {
     return (
       <div className="alert alert-danger" role="alert">
-        This field is required!
+        Este campo é obrigatório.
       </div>
     );
   }
@@ -21,7 +21,7 @@ const email = (value) => {
   if (!isEmail(value)) {
     return (
       <div className="alert alert-danger" role="alert">
-        This is not a valid email.
+        Este email não é válido.
       </div>
     );
   }
@@ -31,7 +31,7 @@ const vusername = (value) => {
   if (value.length < 3 || value.length > 20) {
     return (
       <div className="alert alert-danger" role="alert">
-        The username must be between 3 and 20 characters.
+        O nome de contém de 3 a 20 caracteres.
       </div>
     );
   }
@@ -41,7 +41,7 @@ const vpassword = (value) => {
   if (value.length < 6 || value.length > 40) {
     return (
       <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
+        A senha precisa ter entre 6 e 40 caracters.
       </div>
     );
   }
@@ -51,17 +51,17 @@ const vphone = (value) => {
   if (value.length < 7) {
     return (
       <div className="alert alert-danger" role="alert">
-        The phone must be more 7 characters.
+        O telefone deve conter mais de 7 caracteres.
       </div>
     )
   }
 }
 
 const vcity = (value) => {
-  if (value.length < 3) {
+  if (value.length < 4) {
     return (
       <div className="alert alert-danger" role="alert">
-        The password must be more 3 characters.
+        A cidade deve conter pelo menos 4 caracteres.
       </div>
     )
   }
@@ -71,7 +71,7 @@ const vdistrict = (value) => {
   if (value.length < 2) {
     return (
       <div className="alert alert-danger" role="alert">
-        The password must be more 2 characters.
+        O estado deve conter pelo menos 2 caracteres. 
       </div>
     )
   }
