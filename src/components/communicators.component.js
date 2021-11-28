@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Button, Card, Image, Row, Col, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
 import logo_defaut from '../assets/default_dog.jpg'
