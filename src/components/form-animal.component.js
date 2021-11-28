@@ -36,14 +36,18 @@ class FormAnimal extends Component {
     });
   }
 
-
   handleSubmit(event){
     event.preventDefault();
+    const { history } = this.props;
+
     UserService.postAnimal(this.state.name, this.state.age, this.state.extra_information).then(
       response => {
         this.setState({
           content: response.data.data
         });
+
+        history.push("/pets");
+        window.location.reload();
       },
       error => {
         this.setState({
