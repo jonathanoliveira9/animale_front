@@ -88,7 +88,8 @@ class FormAnimal extends Component {
         <Col sm="10">
           <Form.Control type="text"
            value={this.state.age}
-           onChange={this.onChangeAge} />
+           onChange={this.onChangeAge}
+           required />
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="formExtraInformation">
@@ -98,7 +99,8 @@ class FormAnimal extends Component {
         <Col sm="10">
           <Form.Control as="textarea"
            value={this.state.extra_information}
-           onChange={this.onChangeExtraInformation} />
+           onChange={this.onChangeExtraInformation}
+           required />
         </Col>
       </Form.Group>
       <Form.Group>
